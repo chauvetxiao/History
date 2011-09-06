@@ -12,7 +12,7 @@
  *  5) History.stateSupport: return true if history.state is support, otherwise false; 
  */
     
-(function() {
+(function(window, document, undefined) {
 	var isSupport = !!(window.history && history.pushState);
     
     // operation counter
@@ -220,7 +220,7 @@
         };
         
         // initialise
-        if (hashChange) { // IE8+¡¢chrome6+¡¢Safari5+¡¢Opera10.6+
+        if (hashChange) { // IE8+ï¿½ï¿½chrome6+ï¿½ï¿½Safari5+ï¿½ï¿½Opera10.6+
             if (window.addEventListener) {
 				window.addEventListener('hashchange', controller, false);
 			} else {
@@ -233,4 +233,4 @@
 	
 	// expose
 	window.History = History;
-})();
+})(window, document);
